@@ -1,6 +1,6 @@
 ---
 name: update-github-info
-description: Refresh the GitHub Info page from the latest GitHub Blog and Changelog updates.
+description: Refresh the GitHub Info page from GitHub Blog, Changelog, and Awesome Copilot updates.
 on:
   schedule: daily
   workflow_dispatch:
@@ -34,11 +34,12 @@ Maintain the site's GitHub information page with concise, practical updates for 
 2. Read the current `site/content/github-info.md` using `get_file_contents` so you preserve its structure and avoid duplicating existing content.
 3. Use `web-fetch` to fetch https://github.blog/latest/.
 4. Use `web-fetch` to fetch https://github.blog/changelog/.
-5. Use the GitHub repository API tools for any repository guidance or reference files you need. Do not use terminal commands, the GitHub CLI, or sandboxed shell commands for GitHub API reads.
+5. Use `web-fetch` to fetch https://awesome-copilot.github.com/workflows/.
+6. Use the GitHub repository API tools for any repository guidance or reference files you need. Do not use terminal commands, the GitHub CLI, or sandboxed shell commands for GitHub API reads.
 
 ## Update
 
-Use the edit tool to update `site/content/github-info.md` with only useful, current items from the fetched GitHub Blog and Changelog pages. Keep summaries short and practical, explain how each item helps developers learn GitHub faster, and mention the source for every item. Preserve the existing Markdown structure and remove or refresh stale entries rather than growing the page indefinitely.
+Use the edit tool to update `site/content/github-info.md` with only useful, current items from the fetched GitHub Blog, Changelog, and Awesome Copilot workflows pages. Keep summaries short and practical, explain how each item helps developers learn GitHub faster, and mention the source for every item. Preserve the existing Markdown structure and remove or refresh stale entries rather than growing the page indefinitely.
 
 Do not modify workflow files or unrelated files. Review the resulting diff for accidental changes before requesting the pull request.
 
